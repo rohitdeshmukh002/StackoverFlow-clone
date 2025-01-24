@@ -1,0 +1,76 @@
+<div class="body">
+    <div>
+        <div class="container">
+            <div class="logo-div" role="link">
+
+                <div class="hamburger-menu" (click)="toggleSidebar()">
+                    <ng-container *ngIf="!sharedService.isSidebarVisible">
+                        <span class="icon">&#9776;</span>
+                      </ng-container>
+                      <ng-container *ngIf="sharedService.isSidebarVisible">
+                        <span class="icon">&times;</span>
+                      </ng-container>
+                    
+                </div>
+                <img role="link" class="home-logo" src="/image.png" alt="Home Logo" />
+            </div>
+
+
+            <div class="header">
+                <ul class="header-list">
+                    <li class="menu-item about"><a href="#">About</a></li>
+                    <li class="menu-item products">
+                        <button (click)="toggleDropdown()">Products</button>
+                        <ul class="dropdown-menu" *ngIf="isDropdownOpen">
+                            <li>
+                                <span class="head1">Stack OverFlow for teams</span><br>
+                                <span class="para">Where developers and technologies share private knowladge with
+                                    coworkers</span>
+                            </li>
+                            <li>
+                                <span class="head1">Advertising & Talent</span><br>
+                                <span class="para">Reach devs & technologists wroldwide about your product, service or
+                                    employer brand</span>
+                                <hr>
+                            </li>
+                            <li>
+                                <span class="head1">OverFlowAI</span><br>
+                                <span class="para">GenAI features for Teams </span>
+                            </li>
+                            <li>
+                                <span class="head1">OverFlowAPI</span><br>
+                                <span class="para">Train & Fine-tune LLMs</span>
+                                <hr>
+                            </li>
+                            <li>
+                                <span class="head1">labs</span><br>
+                                <span class="para">The future of collective knowledge sharing</span>
+                                <hr>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="http://">About the company</a>
+                                <a href="http://">visit the blog</a>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item overflow"><a href="#">OverflowAI</a></li>
+                </ul>
+            </div>
+
+        
+            <div class="search-container">
+                <div class="search-bar-main">
+                    <i class="bi bi-search"></i>
+                    <input type="text" class="search-bar" placeholder="Search..." [(ngModel)]="searchQuery" (input)="onSearch()" />
+                </div>
+            </div>
+
+
+            <div class="button-container">
+                <a href="#" class="button button1">Log in</a>
+                <a href="#" class="button button-blue">Sign up</a>
+            </div>
+
+        </div>
+    </div>

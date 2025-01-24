@@ -1,0 +1,90 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0px auto;
+}
+
+.home-container {
+  width: 80%;
+}
+
+.sidebar-container {
+  width: 20% !important;
+}
+
+.footer {
+  z-index: 9;
+    position: relative;
+}
+
+
+/* Large screens (laptops/desktops) */
+@media screen and (max-width: 1244px) {
+  .main-content {
+    max-width: 100%;
+    /* padding: 0 20px; */
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .home-container{
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .main-content {
+    width: 100%;
+    padding: 0;
+    flex-direction: row;
+    gap:10px
+  }
+
+  .home-container {
+    width: 75%;
+  }
+
+  app-header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+}
+
+/* Small screens (mobile devices) */
+@media screen and (max-width: 480px) {
+  .main-content {
+    padding: 0 10px;
+    gap:0px
+  }
+
+  .sidebar-container {
+    margin-bottom: 15px;
+    width: 0% !important;
+  }
+
+  .home-container {
+    width: 98% !important;
+  }
+  
+  /* Adjust header height for mobile */
+  div[style*="height: 55px"] {
+    height: 45px;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 320px) {
+  .main-content {
+    padding: 0 5px;
+  }
+}
